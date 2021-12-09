@@ -31,3 +31,9 @@ You MUST initialize your client mobile application using Expo.
 The purpose is to display a simple screen that allow a user to type a github username (input) and then validate and display all others informations.
 
 The directory must be app
+
+# Ressources
+
+https://github.com/Gi-jutsu/search-in-github-live-grp1
+https://www.prisma.io/docs/getting-started
+https://reactnative.dev/docs/getting-started

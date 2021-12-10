@@ -11,9 +11,11 @@ export default function App() {
 
   async function search() {
     try {
-      const response = await fetch(`http://localhost:4242/api/users/${username}`);
+      const response = await fetch(`http://localhost:4242/api/users/${username}`); //http://localhost:4242/api/users/
+      console.log(response);
       const user = await response.json();
-      setUser(user);
+      console.log(user);
+      setUser(user.user.findUser);
     } catch (error) {
       console.log(error.message);
     }
@@ -43,7 +45,8 @@ export default function App() {
       </View>
       <Separator />
       <View>
-        <Text style = {styles.texte}>test {username}</Text>
+        <Text style = {styles.texte}>test {user.id}</Text>
+        <Text style = {styles.texte}>{user.login}</Text>
       </View>
     </SafeAreaView>
   );

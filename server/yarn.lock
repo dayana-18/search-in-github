@@ -949,6 +949,13 @@
   dependencies:
     "defer-to-connect" "^1.0.1"
 
+"@types/node-fetch@^3.0.3":
+  "integrity" "sha512-HhggYPH5N+AQe/OmN6fmhKmRRt2XuNJow+R3pQwJxOOF9GuwM7O2mheyGeIrs5MOIeNjDEdgdoyHBOrFeJBR3g=="
+  "resolved" "https://registry.npmjs.org/@types/node-fetch/-/node-fetch-3.0.3.tgz"
+  "version" "3.0.3"
+  dependencies:
+    "node-fetch" "*"
+
 "abbrev@1":
   "integrity" "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
   "resolved" "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz"
@@ -2280,6 +2287,11 @@
   dependencies:
     "object.getownpropertydescriptors" "^2.0.3"
     "semver" "^5.7.0"
+
+"node-fetch@*", "node-fetch@^2.0.0":
+  "integrity" "sha1-mCu6Q+zU8pIqKcwYamu7C7c/y6Y="
+  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.0.0.tgz"
+  "version" "2.0.0"
 
 "node-releases@^2.0.1":
   "integrity" "sha512-CqyzN6z7Q6aMeF/ktcMVTzhAHCEpf8SOarwpzpf8pNBY2k5/oM34UHldUwp8VKI7uxct2HxSRdJjBaZeESzcxA=="

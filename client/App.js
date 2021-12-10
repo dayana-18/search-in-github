@@ -36,10 +36,7 @@ export default function App() {
           style = {styles.submitButton}
           onPress = {search}>
           <Text style = {styles.submitButtonText}> Search </Text>
-          <Image
-            style={styles.loupe}
-            source={require('./assets/loupe.png')}
-          />
+          
         </TouchableOpacity>
 
         <StatusBar style="auto" />

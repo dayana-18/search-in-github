@@ -33,6 +33,8 @@ The purpose is to display a simple screen that allow a user to type a github use
 The directory must be app
 
 # Project Setup
+
+# Compile client and server
 cd client
 
 npm start

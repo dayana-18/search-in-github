@@ -11,10 +11,10 @@ export default function App() {
 
   async function search() {
     try {
-      const response = await fetch(`http://localhost:4242/api/users/${username}`); //http://localhost:4242/api/users/
-      console.log(response);
+      const response = await fetch(`http://192.168.0.19:4242/api/users/${username}`); //http://localhost:4242/api/users/
+      //console.log(response);
       const user = await response.json();
-      console.log(user);
+      //console.log(user);
       setUser(user.user.findUser);
     } catch (error) {
       console.log(error.message);
@@ -44,9 +44,13 @@ export default function App() {
         <StatusBar style="auto" />
       </View>
       <Separator />
-      <View>
-        <Text style = {styles.texte}>test {user.id}</Text>
-        <Text style = {styles.texte}>{user.login}</Text>
+      <View style = {styles.view2}>
+        <Text style = {styles.texte}>id : {user.idGitHub}</Text>
+        <Text style = {styles.texte}>login : {user.login}</Text>
+        <Text style = {styles.texte}>{user.public_repos} repositories</Text>
+        <Text style = {styles.texte}>{user.followers} followers</Text>
+        <Text style = {styles.texte}>{user.following} following</Text>
+        <Text style = {styles.texte}>created {user.created_at}</Text>
       </View>
     </SafeAreaView>
   );
@@ -58,6 +62,13 @@ const styles = StyleSheet.create({
     // backgroundColor: '#fff',
     // alignItems: 'center',
     // justifyContent: 'center',
+    paddingTop: 23
+  },
+  view2: {
+    // flex: 1,
+    // backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingTop: 23
   },
   texte: {

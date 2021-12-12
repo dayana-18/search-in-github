@@ -30,46 +30,54 @@ export function launch(port) {
       response.json({ user: { findUser } });
     }
     else {
-      const body = await getGitHubUser(username)
-      console.log(body)
+      try {
+        const data = await getGitHubUser(username)
+        //console.log(data)
+
+        const findUser = await prisma.user.create({
+          data: {
+            idGitHub: data.id,
+            login: data.login,
+            node_id: data.node_id,
+            avatar_url: data.avatar_url,
+            gravatar_id: data.gravatar_id,
+            url: data.url,
+            html_url: data.html_url,
+            followers_url: data.followers_url,
+            following_url: data.followers_url,
+            gists_url: data.gists_url,
+            starred_url: data.starred_url,
+            subscriptions_url: data.subscriptions_url,
+            organizations_url: data.organizations_url,
+            repos_url: data.repos_url,
+            events_url: data.events_url,
+            received_events_url: data.received_events_url,
+            type: data.type,
+            site_admin: data.site_admin,
+            name: data.name,
+            company: data.company,
+            blog: data.blog,
+            location: data.location,
+            email: data.email,
+            bio: data.bio,
+            twitter_username: data.twitter_username,
+            public_repos: data.public_repos,
+            public_gists: data.public_gists,
+            followers: data.followers,
+            following: data.following,
+            created_at: data.created_at,
+            updated_at: data.updated_at,
+            hireable: data.hireable
+          },
+        })
+        response.json({user: {findUser} })
+      } catch (error) {
+        console.log(error);
+        const findUser = ""
+        response.json({user: {findUser} })
+      }
     
-      const createUser = await prisma.user.create({
-        data: {
-          idGitHub: body.id,
-          login: body.login,
-          node_id: body.node_id,
-          avatar_url: body.avatar_url,
-          gravatar_id: body.gravatar_id,
-          url: body.url,
-          html_url: body.html_url,
-          followers_url: body.followers_url,
-          following_url: body.followers_url,
-          gists_url: body.gists_url,
-          starred_url: body.starred_url,
-          subscriptions_url: body.subscriptions_url,
-          organizations_url: body.organizations_url,
-          repos_url: body.repos_url,
-          events_url: body.events_url,
-          received_events_url: body.received_events_url,
-          type: body.type,
-          site_admin: body.site_admin,
-          name: body.name,
-          company: body.company,
-          blog: body.blog,
-          location: body.location,
-          email: body.email,
-          bio: body.bio,
-          twitter_username: body.twitter_username,
-          public_repos: body.public_repos,
-          public_gists: body.public_gists,
-          followers: body.followers,
-          following: body.following,
-          created_at: body.created_at,
-          updated_at: body.updated_at,
-          hireable: body.hireable
-        },
-      })
-      response.json({user: {createUser} })
+      
 
     }
     

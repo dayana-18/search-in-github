@@ -32,8 +32,42 @@ The purpose is to display a simple screen that allow a user to type a github use
 
 The directory must be app
 
+# Project Setup
+
+# Compile client and server
+cd client
+
+npm start
+
+
+cd server
+
+yarn init
+
+npm run dev
+
+# Create db with Prisma
+npm install prisma --save-dev
+
+npm install @prisma/client   
+
+npx prisma init
+
+npx prisma migrate dev 
+
+npx prisma generate
+
+# Fetch API
+npm install node-fetch@2.0.0
+
+npm i --save-dev @types/node-fetch
+
+npm install cors
+
 # Ressources
 
 https://github.com/Gi-jutsu/search-in-github-live-grp1
+
 https://www.prisma.io/docs/getting-started
+
 https://reactnative.dev/docs/getting-started

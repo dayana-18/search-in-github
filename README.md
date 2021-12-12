@@ -64,6 +64,10 @@ npm i --save-dev @types/node-fetch
 
 npm install cors
 
+# Bugs
+
+If search doesn't show up, go to line 14 in app.js and instead of localhost, add your ip address
+
 # Ressources
 
 https://github.com/Gi-jutsu/search-in-github-live-grp1

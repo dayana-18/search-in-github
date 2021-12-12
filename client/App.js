@@ -11,7 +11,7 @@ export default function App() {
 
   async function search() {
     try {
-      const response = await fetch(`http://192.168.0.19:4242/api/users/${username}`); //http://localhost:4242/api/users/
+      const response = await fetch(`http://localhost:4242/api/users/${username}`); //si localhost fonctionne pas, mettre l'adresse IP du PC
       //console.log(response);
       const user = await response.json();
       //console.log(user);
